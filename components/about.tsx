@@ -30,24 +30,41 @@ export function About() {
                 <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
                   Quiénes Somos
                 </h2>
-                <h3 className="text-xl font-semibold text-primary mb-6">Conoce Nuestro Plan</h3>
               </div>
 
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p>
-                  VisualMax es un plan integral de salud visual que brinda acceso exclusivo a beneficios ópticos y
-                  descuentos en servicios oftalmológicos. A través de una red de ópticas y especialistas certificados,
-                  garantiza soluciones accesibles, confiables y de calidad que contribuyen a mejorar el bienestar, la
-                  productividad y el desempeño diario de las personas.
+                  VisualMax es una empresa comprometida con la salud visual de las familias dominicanas. Nuestra misión
+                  es hacer que el cuidado de la visión sea accesible, sencillo y de calidad para todos, sin importar la
+                  edad o condición económica.
                 </p>
 
                 <p>
-                  La iniciativa nace de la necesidad de atender uno de los sentidos más valiosos: la vista, ofreciendo
-                  prevención, corrección y cuidado a todas las edades.
+                  Fundada en 2012, VisualMax nació de la visión de un emprendedor que identificó una necesidad real: la
+                  constante demanda de lentes y el impacto económico que esto representa para las familias. Con el objetivo
+                  de crear una solución que no solo garantizara calidad, sino que también ayudara a reducir los costos del
+                  cuidado visual, desarrollamos un plan integral que combina beneficios ópticos con acceso a servicios
+                  oftalmológicos de excelencia.
                 </p>
 
-                <div className="space-y-4 pt-2">
+                <p>
+                  Hoy, trabajamos con una amplia red de ópticas y especialistas certificados a nivel nacional, ofreciendo
+                  soluciones accesibles, confiables y de calidad que contribuyen a mejorar el bienestar, la productividad y
+                  el desempeño diario de las personas.
+                </p>
+
+                <p className="font-semibold text-foreground">
+                  Nuestro compromiso es claro: que cada persona tenga la oportunidad de mirar el futuro con claridad,
+                  confianza y esperanza.
+                </p>
+
+                <div className="space-y-4 pt-4 border-t border-primary/10">
                   <h4 className="text-xl font-bold text-foreground">¿Qué es VisualMax?</h4>
+                  <p>
+                    VisualMax es un plan integral de salud visual que brinda acceso exclusivo a beneficios ópticos y
+                    descuentos en servicios oftalmológicos. A través de una red de ópticas y especialistas certificados,
+                    garantiza soluciones accesibles, confiables y de calidad.
+                  </p>
                   <p>
                     Se trata de un plan de protección y beneficios en salud visual que combina dos elementos principales:
                   </p>
@@ -61,10 +78,10 @@ export function About() {
                   </p>
                 </div>
 
-                <div className="space-y-4 pt-2">
+                <div className="space-y-4 pt-4 border-t border-primary/10">
                   <h4 className="text-xl font-bold text-foreground">Importancia de la Salud Visual</h4>
-                  <p>
-                    La vista es el sentido por el cual percibimos la mayor parte del mundo que nos rodea:
+                  <p className="font-semibold text-foreground text-lg mb-4">
+                    Las cifras no mienten, y todas cuentan una historia que podría ser la tuya:
                   </p>
                   <ul className="list-disc list-inside space-y-2 ml-4">
                     <li>El 80% de la información que procesamos llega a través de los ojos.</li>
@@ -84,7 +101,7 @@ export function About() {
                       importancia de una detección temprana.
                     </li>
                   </ul>
-                  <p className="font-semibold text-foreground">
+                  <p className="font-semibold text-foreground mt-4">
                     En resumen, cuidar la visión es cuidar la calidad de vida, la seguridad y el rendimiento académico y
                     laboral.
                   </p>

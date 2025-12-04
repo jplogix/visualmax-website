@@ -1,8 +1,10 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Phone, Clock } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { MapPin, Clock } from "lucide-react"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export function Providers() {
   const optimaxLocations = [
@@ -60,6 +62,18 @@ export function Providers() {
       address: "Av. Juan Pablo Duarte, Santiago",
       hours: "Lunes a sábado 9:00 a.m. - 8:00 p.m.",
     },
+    {
+      name: "Barahona",
+      phone: "",
+      address: "Barahona",
+      hours: "Lunes a sábado 9:00 a.m. - 8:00 p.m.",
+    },
+    {
+      name: "Cedaky",
+      phone: "",
+      address: "Cedaky",
+      hours: "Lunes a sábado 9:00 a.m. - 8:00 p.m.",
+    },
   ]
 
   const oftalmologicaLocations = [
@@ -100,7 +114,7 @@ export function Providers() {
             <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
               Ópticas Autorizadas - Optimax
             </h2>
-            <p className="text-muted-foreground">Sucursales en todo el país</p>
+            <p className="text-muted-foreground">Encuentra tu sucursal más cercana</p>
           </motion.div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -124,15 +138,6 @@ export function Providers() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 text-sm">
-                      <Phone className="h-4 w-4 text-primary" />
-                      <a
-                        href={`tel:${location.phone.replace(/\s+/g, '').replace(/-/g, '').replace(/EXT:.*/i, '').trim()}`}
-                        className="font-semibold hover:text-primary transition-colors"
-                      >
-                        {location.phone}
-                      </a>
-                    </div>
 
                     <div className="flex items-start gap-2 text-sm">
                       <Clock className="h-4 w-4 text-primary mt-0.5" />
@@ -159,7 +164,7 @@ export function Providers() {
             </h2>
             <p className="text-muted-foreground mb-8">
               Centro oftalmológico integral dirigido a ofrecer consultas, estudios diagnósticos, cirugías oculares,
-              además de un servicio completo de óptica y farmacia oftalmológica.
+              disponible a través de clínicas y consultorios afiliados.
             </p>
           </motion.div>
 
@@ -193,6 +198,11 @@ export function Providers() {
                   </Card>
                 </motion.div>
               ))}
+            </div>
+            <div className="text-center mt-8">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+                <Link href="#citas">Haz tu cita aquí!</Link>
+              </Button>
             </div>
           </div>
         </div>

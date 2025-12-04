@@ -51,6 +51,12 @@ export function Footer() {
             <Input type="email" placeholder="Tu correo electrónico" className="flex-1" />
             <Button type="submit">Suscribirse</Button>
           </div>
+          <p className="text-xs text-muted-foreground text-center mt-2">
+            Envía tu solicitud a:{" "}
+            <a href="mailto:operaciones@visualmax.com.do" className="text-primary hover:underline">
+              operaciones@visualmax.com.do
+            </a>
+          </p>
         </div>
 
         <div className="border-t border-border pt-8 text-center">

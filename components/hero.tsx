@@ -63,7 +63,7 @@ export function Hero() {
                   Plan de Salud Visual
                 </span>
                 <h1 className="text-balance text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl drop-shadow-sm">
-                  Tu Plan Integral de Salud Visual
+                  Cuidar tus ojos ahora es más fácil
                 </h1>
                 <p className="text-pretty text-xl text-muted-foreground leading-relaxed">
                   Soluciones accesibles, confiables y de calidad para cuidar tu visión a todas las edades
@@ -72,12 +72,8 @@ export function Hero() {
               <div>
                 <div className="flex flex-wrap items-center gap-4">
                   <Button size="lg" className="text-lg px-8 py-6 shadow-lg shadow-primary/25" onClick={() => setIsModalOpen(true)}>
-                    Conoce Nuestro Plan
+                    Únete a Visual Max
                   </Button>
-                  <div className="flex items-center gap-3 rounded-full bg-white/70 px-4 py-3 text-sm font-semibold text-primary shadow-sm">
-                    <div className="h-2.5 w-2.5 rounded-full bg-primary animate-pulse" />
-                    Atención a familias y empresas
-                  </div>
                 </div>
               </div>
 
@@ -89,10 +85,10 @@ export function Hero() {
                 className="grid gap-4 rounded-2xl bg-white/75 p-6 backdrop-blur-md shadow-xl shadow-primary/10 sm:grid-cols-2"
               >
                 {[
-                  { title: "Consulta anual incluida", detail: "Examen de la vista GRATIS" },
-                  { title: "Beneficios reales", detail: "Montura gratis + 10% en cristales" },
-                  { title: "Cobertura nacional", detail: "Red de ópticas Optimax y aliados" },
-                  { title: "Planes flexibles", detail: "Individual, familiar y corporativo" },
+                  { title: "Montura GRATIS cada año", detail: "Beneficio incluido en tu plan" },
+                  { title: "Amplia red de prestadores", detail: "Red de ópticas Optimax y aliados" },
+                  { title: "Planes adaptados", detail: "Individual, familiar y corporativo" },
+                  { title: "Atención integral", detail: "Óptica y servicios oftalmológicos" },
                 ].map((item, idx) => (
                   <div key={idx} className="flex flex-col gap-1 rounded-lg border border-primary/10 bg-primary/5 p-3">
                     <p className="text-xs font-semibold text-primary uppercase tracking-[0.08em]">{item.title}</p>

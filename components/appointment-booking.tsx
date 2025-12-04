@@ -34,10 +34,9 @@ export function AppointmentBooking() {
   ]
 
   const services = [
-    "Examen de la vista",
     "Consulta oftalmológica",
-    "Reparación de monturas",
-    "Selección de lentes",
+    "Examen oftalmológico completo",
+    "Estudios diagnósticos",
     "Otro",
   ]
 
@@ -78,14 +77,17 @@ export function AppointmentBooking() {
             Agenda tu Cita
           </h2>
           <p className="text-muted-foreground">
-            Reserva tu examen de la vista o consulta en cualquiera de nuestras sucursales Optimax
+            Reserva tu consulta oftalmológica en cualquiera de nuestras clínicas afiliadas
           </p>
         </div>
 
         <Card className="card-raise">
           <CardHeader>
             <CardTitle>Información de la Cita</CardTitle>
-            <CardDescription>Completa el formulario y nos pondremos en contacto contigo</CardDescription>
+            <CardDescription>
+              Completa el formulario y nos pondremos en contacto contigo. Las citas son solamente para las consultas
+              oftalmológicas.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">

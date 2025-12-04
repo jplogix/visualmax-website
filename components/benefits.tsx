@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Eye, Wrench, Glasses, Stethoscope, Sparkles, Contact, Scissors, Sun } from "lucide-react"
+import { Eye, Wrench, Glasses, Stethoscope, Sparkles, Contact, Scissors, Sun, Layers } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function Benefits() {
@@ -9,42 +9,47 @@ export function Benefits() {
     {
       icon: Eye,
       title: "Examen de la vista GRATIS",
-      description: "Evaluación visual completa cada año sin costo",
-    },
-    {
-      icon: Wrench,
-      title: "Reparación y mantenimiento GRATIS",
-      description: "Servicio de ajuste y reparación de monturas incluido",
+      description: "Evaluación visual completa cada año",
     },
     {
       icon: Glasses,
-      title: "Montura gratuita anual",
-      description: "Una montura de cortesía cada año como parte del plan",
+      title: "Montura GRATIS cada año",
+      description: "Una montura incluida cada año como parte del plan",
+    },
+    {
+      icon: Layers,
+      title: "Descuento en la elaboración de cristales",
+      description: "Beneficios en la elaboración de cristales",
+    },
+    {
+      icon: Wrench,
+      title: "Servicio GRATIS de reparación y mantenimiento de monturas",
+      description: "Servicio de ajuste y reparación de monturas incluido",
     },
     {
       icon: Stethoscope,
       title: "Descuentos en consultas oftalmológicas",
-      description: "Precios especiales con médicos de prestigio",
+      description: "Precios especiales con excelentes médicos",
     },
     {
       icon: Contact,
-      title: "Reducción en lentes de contacto",
-      description: "Descuentos en lentes básicos y especializados",
+      title: "Descuentos en lentes de contacto",
+      description: "Descuento en lentes básicos y especializados",
+    },
+    {
+      icon: Sun,
+      title: "Bonos en lentes de Sol",
+      description: "Beneficios en gafas de sol",
     },
     {
       icon: Sparkles,
-      title: "Procedimientos estéticos oculares",
+      title: "Descuentos en procedimientos estéticos",
       description: "Precios preferenciales en tratamientos estéticos",
     },
     {
       icon: Scissors,
-      title: "Estudios y cirugías oftalmológicas",
+      title: "Descuentos en estudios y cirugías oftalmológicas",
       description: "Descuentos con acceso a clínicas de confianza",
-    },
-    {
-      icon: Sun,
-      title: "Cristales y gafas de sol",
-      description: "Beneficios en la elaboración de cristales y gafas de sol",
     },
   ]
 
@@ -80,10 +85,10 @@ export function Benefits() {
           >
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">Ahorro tangible</p>
             <p className="mt-2 text-lg font-bold text-foreground leading-snug">
-              Montura gratis anual + 10% en cristales + consultas con precios preferenciales.
+              Montura gratis anual + descuentos en cristales + consultas con precios preferenciales.
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {["Familias y empresas", "Cobertura nacional", "Atención en minutos", "Planes flexibles"].map(
+              {["Familias y empresas", "Amplia red de prestadores", "Atención en minutos", "Planes flexibles"].map(
                 (item) => (
                   <div
                     key={item}
@@ -123,10 +128,14 @@ export function Benefits() {
           })}
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-8 text-center space-y-4">
           <p className="text-sm text-muted-foreground italic">
             Estos beneficios no solo representan un ahorro económico, sino también una inversión en la prevención de
             problemas de visión más serios.
+          </p>
+          <p className="text-xs text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            Los beneficios y descuentos pueden variar según el plan de salud visual contratado. Te recomendamos consultar
+            los detalles específicos de tu cobertura con el prestador asociado a tu afiliación.
           </p>
         </div>
       </div>
