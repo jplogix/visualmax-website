@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { MapPin, Clock } from "lucide-react"
+import { MapPin, Clock, Phone, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 
@@ -64,15 +64,20 @@ export function Providers() {
     },
     {
       name: "Barahona",
-      phone: "",
-      address: "Barahona",
-      hours: "Lunes a sábado 9:00 a.m. - 8:00 p.m.",
+      phone: "+1 (809) 501-4658",
+      email: "barahona@optimax.com.do",
+      extension: "7725",
+      whatsapp: "+1 (809) 501-4658",
+      address: "Plaza el Encanto, Local #10, Av. Enriquillo Mota Km 1.5, Barahona",
+      hours: "Lunes a sábado: 9:00 a.m. – 9:00 p.m.\nDomingos y días feriados: 9:00 a.m. – 8:00 p.m.",
     },
     {
-      name: "Cedaky",
-      phone: "",
-      address: "Cedaky",
-      hours: "Lunes a sábado 9:00 a.m. - 8:00 p.m.",
+      name: "Puerto Plata Cedaky",
+      phone: "809-501-4587",
+      email: "cedaky@optimax.com.do",
+      whatsapp: "809-501-4587",
+      address: "C/ Angel Muñiz, esq. Las Palmas",
+      hours: "Lunes a sábado: 10:00 am – 7:00 pm\nDomingos y días feriados: 9:00 am – 9:00 pm",
     },
   ]
 
@@ -138,10 +143,26 @@ export function Providers() {
                       </div>
                     </div>
 
+                    {location.phone && (
+                      <div className="flex items-center gap-2 text-sm">
+                        <Phone className="h-4 w-4 text-primary" />
+                        <span className="text-muted-foreground">
+                          {location.phone}
+                          {location.extension && ` Ext: ${location.extension}`}
+                        </span>
+                      </div>
+                    )}
+
+                    {location.email && (
+                      <div className="flex items-center gap-2 text-sm">
+                        <Mail className="h-4 w-4 text-primary" />
+                        <span className="text-muted-foreground">{location.email}</span>
+                      </div>
+                    )}
 
                     <div className="flex items-start gap-2 text-sm">
                       <Clock className="h-4 w-4 text-primary mt-0.5" />
-                      <span className="text-muted-foreground">{location.hours}</span>
+                      <span className="text-muted-foreground whitespace-pre-line">{location.hours}</span>
                     </div>
                   </CardContent>
                 </Card>
