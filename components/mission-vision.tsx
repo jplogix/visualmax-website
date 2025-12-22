@@ -1,5 +1,5 @@
+import { Eye, Heart, Target } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Target, Eye, Heart } from "lucide-react"
 
 export function MissionVision() {
   const values = [

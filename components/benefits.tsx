@@ -1,52 +1,61 @@
 "use client"
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Eye, Wrench, Glasses, Stethoscope, Sparkles, Contact, Scissors, Sun, Layers } from "lucide-react"
 import { motion } from "framer-motion"
+import { Contact, Eye, Glasses, Layers, Scissors, Sparkles, Stethoscope, Sun, Wrench } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
 
 export function Benefits() {
   const benefits = [
     {
+      id: "examen-vista",
       icon: Eye,
       title: "Examen de la vista GRATIS",
       description: "Evaluación visual completa cada año",
     },
     {
+      id: "montura-gratis",
       icon: Glasses,
       title: "Montura GRATIS cada año",
       description: "Una montura incluida cada año como parte del plan",
     },
     {
+      id: "descuento-cristales",
       icon: Layers,
       title: "Descuento en la elaboración de cristales",
       description: "Beneficios en la elaboración de cristales",
     },
     {
+      id: "reparacion-monturas",
       icon: Wrench,
       title: "Servicio GRATIS de reparación y mantenimiento de monturas",
       description: "Servicio de ajuste y reparación de monturas incluido",
     },
     {
+      id: "consultas-oftalmologicas",
       icon: Stethoscope,
       title: "Descuentos en consultas oftalmológicas",
       description: "Precios especiales con excelentes médicos",
     },
     {
+      id: "lentes-contacto",
       icon: Contact,
       title: "Descuentos en lentes de contacto",
       description: "Descuento en lentes básicos y especializados",
     },
     {
+      id: "lentes-sol",
       icon: Sun,
       title: "Bonos en lentes de Sol",
       description: "Beneficios en gafas de sol",
     },
     {
+      id: "procedimientos-esteticos",
       icon: Sparkles,
       title: "Descuentos en procedimientos estéticos",
       description: "Precios preferenciales en tratamientos estéticos",
     },
     {
+      id: "cirugias-oftalmologicas",
       icon: Scissors,
       title: "Descuentos en estudios y cirugías oftalmológicas",
       description: "Descuentos con acceso a clínicas de confianza",
@@ -108,7 +117,7 @@ export function Benefits() {
             const Icon = benefit.icon
             return (
               <motion.div
-                key={index}
+                key={benefit.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}

@@ -1,8 +1,15 @@
 "use client"
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Quote } from "lucide-react"
 import { motion } from "framer-motion"
+import { Quote } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 export function Testimonials() {
   const testimonials = [
@@ -57,33 +64,48 @@ export function Testimonials() {
           <p className="mt-6 text-muted-foreground">Lo que dicen nuestros afiliados sobre VisualMax</p>
         </motion.div>
 
-        {/* Testimonials Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.05 }}
-            >
-              <Card className="card-raise hover:-translate-y-1 transition-all duration-200 h-full">
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex justify-center">
-                    <div className="rounded-full bg-primary/10 p-3">
-                      <Quote className="h-6 w-6 text-primary" />
-                    </div>
-                  </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed italic">"{testimonial.text}"</p>
-                  <div className="text-center pt-4 border-t">
-                    <p className="font-bold text-foreground">{testimonial.name}</p>
-                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+        {/* Testimonials Carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mb-16"
+        >
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem
+                  key={index}
+                  className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
+                >
+                  <Card className="card-raise hover:-translate-y-1 transition-all duration-200 h-full">
+                    <CardContent className="p-6 space-y-4">
+                      <div className="flex justify-center">
+                        <div className="rounded-full bg-primary/10 p-3">
+                          <Quote className="h-6 w-6 text-primary" />
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed italic">"{testimonial.text}"</p>
+                      <div className="text-center pt-4 border-t">
+                        <p className="font-bold text-foreground">{testimonial.name}</p>
+                        <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 md:-left-12" />
+            <CarouselNext className="right-0 md:-right-12" />
+          </Carousel>
+        </motion.div>
 
         {/* YouTube Videos */}
         <div>
@@ -91,16 +113,16 @@ export function Testimonials() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
             {videoIds.map((videoId, index) => (
               <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
-            className="aspect-video overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-lg shadow-primary/10 transition-all hover:-translate-y-1"
-          >
-            <iframe
-              width="100%"
-              height="100%"
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
+                className="aspect-video overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-lg shadow-primary/10 transition-all hover:-translate-y-1"
+              >
+                <iframe
+                  width="100%"
+                  height="100%"
                   src={`https://www.youtube.com/embed/${videoId}`}
                   title={`Testimonio VisualMax ${index + 1}`}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

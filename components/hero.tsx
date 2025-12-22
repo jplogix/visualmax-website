@@ -1,10 +1,10 @@
 "use client"
 
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { useState, useRef, useEffect } from "react"
-import { SignupModal } from "./signup-modal"
 import { motion } from "framer-motion"
+import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
+import { Button } from "@/components/ui/button"
+import { SignupModal } from "./signup-modal"
 
 const videos = [
   "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5241181-hd_1280_720_50fps-iGDSXs4LeyllGEOjLOYgmxh9AnOoiW.mp4",
@@ -48,7 +48,6 @@ export function Hero() {
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[rgba(41,175,75,0.45)] via-background/85 to-background" />
         </div>
-
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <motion.div

@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, Instagram, Facebook, MessageCircle } from "lucide-react"
+import { Phone, Mail, MapPin } from "lucide-react"
 
 export function Contact() {
   return (
@@ -69,53 +68,6 @@ export function Contact() {
               </p>
             </CardContent>
           </Card>
-        </div>
-
-        <div className="rounded-2xl bg-black p-8 md:p-12 text-center text-white shadow-xl shadow-black/25">
-          <h3 className="text-2xl font-bold mb-4">Síguenos en Redes Sociales</h3>
-          <p className="text-lg mb-8 opacity-90">Mantente al día con nuestras novedades y promociones</p>
-
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Button asChild variant="secondary" size="lg" className="bg-gradient-to-r from-[#E4405F] to-[#F56040] text-white hover:from-[#D32E4F] hover:to-[#E55030] border-0">
-              <a
-                href="https://instagram.com/visualmaxrd"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <Instagram className="h-5 w-5" />
-                @visualmaxrd
-              </a>
-            </Button>
-
-            <Button asChild variant="secondary" size="lg" className="bg-[#1877F2] text-white hover:bg-[#166FE5] border-0">
-              <a
-                href="https://facebook.com/visualmaxrd"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <Facebook className="h-5 w-5" />
-                VisualMax RD
-              </a>
-            </Button>
-
-            <Button asChild variant="secondary" size="lg" className="bg-[#25D366] text-white hover:bg-[#20BA5A] border-0">
-              <a
-                href="https://wa.me/18095550100"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <MessageCircle className="h-5 w-5" />
-                WhatsApp
-              </a>
-            </Button>
-          </div>
-
-          <p className="text-sm opacity-75">
-            Usa el hashtag <strong>#PlanSaludVisual</strong> para compartir tu experiencia
-          </p>
         </div>
       </div>
     </section>

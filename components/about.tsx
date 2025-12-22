@@ -1,8 +1,12 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
+import { ChevronDown, ChevronUp } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export function About() {
+  const [isExpanded, setIsExpanded] = useState(false)
   return (
     <section id="quienes-somos" className="relative overflow-hidden bg-white py-16 sm:py-24">
       {/* Added video background with overlay */}
@@ -24,8 +28,8 @@ export function About() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mx-auto max-w-6xl"
         >
-          <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] items-start">
-            <div className="space-y-6 rounded-2xl border border-primary/10 bg-white/80 p-8 shadow-lg shadow-primary/5 backdrop-blur">
+          <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] items-stretch">
+            <div className="flex flex-col space-y-6 rounded-2xl border border-primary/10 bg-white/80 p-8 shadow-lg shadow-primary/5 backdrop-blur h-full">
               <div className="text-center lg:text-left">
                 <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
                   Quiénes Somos
@@ -58,53 +62,46 @@ export function About() {
                   confianza y esperanza.
                 </p>
 
-                <div className="space-y-4 pt-4 border-t border-primary/10">
-                  <h4 className="text-xl font-bold text-foreground">¿Qué es VisualMax?</h4>
-                  <p>
-                    VisualMax es un plan integral de salud visual que brinda acceso exclusivo a beneficios ópticos y
-                    descuentos en servicios oftalmológicos. A través de una red de ópticas y especialistas certificados,
-                    garantiza soluciones accesibles, confiables y de calidad.
-                  </p>
-                  <p>
-                    Se trata de un plan de protección y beneficios en salud visual que combina dos elementos principales:
-                  </p>
-                  <ol className="list-decimal list-inside space-y-2 ml-4">
-                    <li>Cobertura en incidencias relacionadas con la salud ocular.</li>
-                    <li>Acceso a descuentos preferenciales en servicios médicos oftalmológicos y productos ópticos.</li>
-                  </ol>
-                  <p>
-                    Su diseño busca responder a las necesidades reales de la población, desde la etapa escolar hasta la
-                    vida laboral y adulta, donde los problemas visuales son más frecuentes.
-                  </p>
-                </div>
+                {isExpanded && (
+                  <div className="space-y-4 pt-4 border-t border-primary/10">
+                    <h4 className="text-xl font-bold text-foreground">¿Qué es VisualMax?</h4>
+                    <p>
+                      VisualMax es un plan integral de salud visual que brinda acceso exclusivo a beneficios ópticos y
+                      descuentos en servicios oftalmológicos. A través de una red de ópticas y especialistas certificados,
+                      garantiza soluciones accesibles, confiables y de calidad.
+                    </p>
+                    <p>
+                      Se trata de un plan de protección y beneficios en salud visual que combina dos elementos principales:
+                    </p>
+                    <ol className="list-decimal list-inside space-y-2 ml-4">
+                      <li>Cobertura en incidencias relacionadas con la salud ocular.</li>
+                      <li>Acceso a descuentos preferenciales en servicios médicos oftalmológicos y productos ópticos.</li>
+                    </ol>
+                    <p>
+                      Su diseño busca responder a las necesidades reales de la población, desde la etapa escolar hasta la
+                      vida laboral y adulta, donde los problemas visuales son más frecuentes.
+                    </p>
+                  </div>
+                )}
 
-                <div className="space-y-4 pt-4 border-t border-primary/10">
-                  <h4 className="text-xl font-bold text-foreground">Importancia de la Salud Visual</h4>
-                  <p className="font-semibold text-foreground text-lg mb-4">
-                    Las cifras no mienten, y todas cuentan una historia que podría ser la tuya:
-                  </p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>El 80% de la información que procesamos llega a través de los ojos.</li>
-                    <li>El 59% de los accidentes de tráfico están relacionados con la falta de corrección visual.</li>
-                    <li>Más del 70% de la fuerza laboral requiere algún tipo de corrección óptica.</li>
-                    <li>
-                      Después de los 40 años, el 100% de las personas desarrolla algún tipo de problema visual, desde
-                      presbicia hasta enfermedades oculares más complejas.
-                    </li>
-                    <li>El 77% de la población reconoce que la visión es la capacidad física que más teme perder.</li>
-                    <li>
-                      En la edad escolar, el 20% de los niños presenta dificultades visuales, lo que afecta directamente
-                      su aprendizaje y desarrollo.
-                    </li>
-                    <li>
-                      Muchos colegios exigen un chequeo visual para la matrícula de sus alumnos, reflejando la
-                      importancia de una detección temprana.
-                    </li>
-                  </ul>
-                  <p className="font-semibold text-foreground mt-4">
-                    En resumen, cuidar la visión es cuidar la calidad de vida, la seguridad y el rendimiento académico y
-                    laboral.
-                  </p>
+                <div className="pt-4 border-t border-primary/10">
+                  <Button
+                    variant="ghost"
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="w-full justify-center gap-2 text-primary hover:text-primary/80"
+                  >
+                    {isExpanded ? (
+                      <>
+                        Leer menos
+                        <ChevronUp className="h-4 w-4" />
+                      </>
+                    ) : (
+                      <>
+                        Leer más
+                        <ChevronDown className="h-4 w-4" />
+                      </>
+                    )}
+                  </Button>
                 </div>
               </div>
             </div>
@@ -114,7 +111,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="card-raise card-raise-muted space-y-6 rounded-3xl border border-primary/15 p-8"
+              className="card-raise card-raise-muted space-y-6 rounded-3xl border border-primary/15 p-8 h-full flex flex-col"
             >
               <div className="flex items-center gap-3">
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">

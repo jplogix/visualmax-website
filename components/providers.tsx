@@ -5,8 +5,10 @@ import { Button } from "@/components/ui/button"
 import { MapPin, Clock, Phone, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { useAppointmentDialog } from "@/components/appointment-booking"
 
 export function Providers() {
+  const { setOpen: setDialogOpen } = useAppointmentDialog()
   const optimaxLocations = [
     {
       name: "Novo - Centro",
@@ -75,6 +77,7 @@ export function Providers() {
       name: "Puerto Plata Cedaky",
       phone: "809-501-4587",
       email: "cedaky@optimax.com.do",
+      extension: "Pendiente",
       whatsapp: "809-501-4587",
       address: "C/ Angel Muñiz, esq. Las Palmas",
       hours: "Lunes a sábado: 10:00 am – 7:00 pm\nDomingos y días feriados: 9:00 am – 9:00 pm",
@@ -221,7 +224,14 @@ export function Providers() {
               ))}
             </div>
             <div className="text-center mt-8">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 hidden lg:inline-flex"
+                onClick={() => setDialogOpen(true)}
+              >
+                Haz tu cita aquí!
+              </Button>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 lg:hidden">
                 <Link href="#citas">Haz tu cita aquí!</Link>
               </Button>
             </div>

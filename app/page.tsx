@@ -4,7 +4,7 @@ import { About } from "@/components/about"
 import { Statistics } from "@/components/statistics"
 import { Benefits } from "@/components/benefits"
 import { Providers } from "@/components/providers"
-import { AppointmentBooking } from "@/components/appointment-booking"
+import { AppointmentBooking, AppointmentDialogProvider } from "@/components/appointment-booking"
 import { Testimonials } from "@/components/testimonials"
 import { OurStory } from "@/components/our-story"
 import { MissionVision } from "@/components/mission-vision"
@@ -16,7 +16,7 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function Home() {
   return (
-    <>
+    <AppointmentDialogProvider>
       <Header />
       <main>
         <Hero />
@@ -34,6 +34,6 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppButton />
-    </>
+    </AppointmentDialogProvider>
   )
 }

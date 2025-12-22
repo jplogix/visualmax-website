@@ -1,13 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import { Home, Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { Menu, X, Home } from "lucide-react"
+import { useState } from "react"
+import { useAppointmentDialog } from "@/components/appointment-booking"
 import { Button } from "@/components/ui/button"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { setOpen: setDialogOpen } = useAppointmentDialog()
 
   const navItems = [
     { href: "#quienes-somos", label: "Quiénes Somos" },
@@ -71,11 +73,15 @@ export function Header() {
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
-          <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10 bg-transparent">
-            <Link href="#citas">Agendar Cita</Link>
+          <Button
+            variant="outline"
+            className="border-primary text-primary hover:bg-primary/10 bg-transparent"
+            onClick={() => setDialogOpen(true)}
+          >
+            Agendar Cita
           </Button>
           <Button asChild className="bg-primary hover:bg-primary/90">
-            <Link href="#inicio">Afíliate ahora</Link>
+            <Link href="https://wa.me/18496215376" target="_blank" rel="noopener noreferrer">Afíliate ahora</Link>
           </Button>
         </div>
       </nav>
@@ -118,7 +124,7 @@ export function Header() {
             </Link>
             <div className="pt-4">
               <Button asChild className="w-full bg-primary hover:bg-primary/90">
-                <Link href="#inicio" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="https://wa.me/18496215376" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
                   Afíliate ahora
                 </Link>
               </Button>
